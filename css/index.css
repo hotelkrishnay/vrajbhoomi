@@ -1,0 +1,215 @@
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { overflow-x: hidden; background-color: #f4f6f9; }
+        .navbar { background-color: #aaacaf; color: #fff; padding: 15px 20px; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .navbar .logo img { height: 100px; width: auto; object-fit: contain; border-radius: 50px;}
+        .navbar .nav-links { display: flex; gap: 20px; }
+        .navbar .nav-links a { color: #ffffff; text-decoration: none; font-size: 1rem; transition: color 0.3s ease; }
+        .navbar .nav-links a:hover { color: #ffd700; }
+        .navbar .contact-btns { display: flex; gap: 10px; align-items: center; }
+        .navbar .contact-btns a { padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.9rem; transition: background-color 0.3s ease; }
+        .navbar .call-btn { background-color: #28a745; color: #fff; }
+        .navbar .whatsapp-btn { background-color: #25d366; color: #fff; }
+        .navbar .call-btn:hover, .navbar .whatsapp-btn:hover { opacity: 0.9; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; }
+
+        /* Floating Buttons for Mobile */
+        .floating-buttons { 
+            display: none; 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 1000; 
+            flex-direction: column; 
+            gap: 10px; 
+        }
+        .floating-buttons a { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            text-decoration: none; 
+            color: #fff; 
+            font-size: 1.2rem; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+        .floating-buttons .call-btn { background-color: #28a745; }
+        .floating-buttons .whatsapp-btn { background-color: #25d366; }
+        .floating-buttons a:hover { transform: scale(1.1); opacity: 0.9; }
+
+        /* Hero Slider (Smaller Height, Full Width) */
+        .hero { height: 80vh; width: 100%; position: relative; overflow: hidden; }
+        .slider { width: 100%; height: 100%; display: flex; transition: transform 0.5s ease; }
+        .slide { min-width: 100%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fcfcfc; width: 100%; padding: 20px; }
+        .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; animation: fadeInUp 1s ease; }
+        .hero-content p { font-size: 1rem; margin-bottom: 20px; animation: fadeInUp 1.2s ease; }
+        .hero-content .btn { background-color: #ffd700; color: #fbfbfb; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease; animation: fadeInUp 1.4s ease; }
+        .hero-content .btn:hover { background-color: #e6c200; }
+
+        /* Hotel Info Section with Cards */
+        .hotel-info { padding: 60px 20px; background-color: #f4f6f9; text-align: center; }
+        .hotel-info .info-card { background-color: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 30px; width: 100%; box-sizing: border-box; }
+        .hotel-info .info-card h2 { font-size: 2rem; color: #1a2a44; margin-bottom: 15px; position: relative; padding-bottom: 10px; }
+        .hotel-info .info-card h2::after { content: ''; width: 40px; height: 3px; background-color: #ffd700; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .hotel-info .info-card p { color: #333; line-height: 1.6; text-align: left; margin: 0; }
+        .hotel-info .booking-card { background-color: #1a2a44; color: #fff; border-radius: 15px; padding: 30px; width: 100%; box-sizing: border-box; margin-bottom: 30px; }
+        .hotel-info .booking-card h2 { font-size: 2rem; margin-bottom: 20px; }
+        .hotel-info .booking-card .contact-details { display: flex; flex-direction: column; gap: 15px; text-align: left; }
+        .hotel-info .booking-card .contact-details a { color: #ffd700; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .hotel-info .booking-card .contact-details a:hover { color: #e6c200; }
+        .hotel-info .booking-card .contact-details img { height: 20px; }
+        .hotel-info .booking-card .book-btn { background-color: #ffd700; color: #1a2a44; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; transition: background-color 0.3s ease; }
+        .hotel-info .booking-card .book-btn:hover { background-color: #e6c200; }
+
+        /* Footer with Three Parts */
+        .footer {
+            background-color:#1a2a44;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer .footer-part {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .footer .footer-part.logo-address img {
+            height: 50px;
+            margin-bottom: 10px;
+             
+        }
+        .footer .footer-part.logo-address p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        .footer .footer-part.contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .footer .footer-part.contact-info p {
+            margin: 5px 0;
+        }
+        .footer .footer-part.contact-info a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .footer .footer-part.contact-info a:hover {
+            color: #ffd700;
+        }
+        .footer .footer-part.map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+        .footer .footer-part.links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            display: inline-block;
+        }
+        .footer .footer-part.links a:hover {
+            color: #ffd700;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                width: 100%; 
+                background-color: #1a2a44; 
+                padding: 20px; 
+                text-align: center; 
+            }
+            .navbar .nav-links.active { display: flex; }
+            .navbar .contact-btns { 
+                display: flex; /* Keep buttons visible on mobile */
+                flex-direction: row; 
+                gap: 10px; 
+            }
+            .navbar .contact-btns.active { 
+                position: static; /* Ensure buttons stay in navbar */
+                padding: 10px 0; 
+            }
+            .menu-toggle { display: block; }
+            .floating-buttons { 
+                display: flex; /* Show floating buttons on mobile */
+            }
+            .hero-content h1 { font-size: 1.5rem; }
+            .hero-content p { font-size: 0.9rem; }
+            .navbar .logo img { height: 50px; }
+            .hotel-info .info-card h2 { font-size: 1.5rem; }
+            .hotel-info .info-card { padding: 15px; }
+            .hotel-info .booking-card { padding: 20px; }
+            .hotel-info .booking-card h2 { font-size: 1.5rem; }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer .footer-part {
+                min-width: 100%;
+            }
+            .footer .footer-part.map iframe {
+                height: 250px;
+            }
+            .footer .footer-part.links a {
+                margin: 0 10px 10px 0;
+            }
+            .footer .logo img { height: 40px; }
+        }
+
+        /* Schema Markup for SEO */
+        .schema-hidden { display: none; }
+
+                .info-card h3 {
+            font-size: 1.2rem;          /* Slightly bigger than body text */
+            font-weight: 600;           /* Semi-bold */
+            color: #0d3b66;
+            text-align: left;             /* A nice contrast (dark blue tone) */
+            margin-top: 15px;           /* Space above */
+            margin-bottom: 8px;         /* Space below */
+            position: relative;         /* For underline effect */
+            text-transform: capitalize; /* Better readability */
+            letter-spacing: 0.5px;      /* Small spacing for elegance */
+        }
+
+        /* Add a decorative underline */
+        .info-card h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;                /* Short underline */
+            height: 3px;
+            background: #f4b400;        /* Yellow accent (matches your design) */
+            border-radius: 2px;
+        }
+        /* Rooms Section */
+        .rooms-section { padding: 100px 20px 60px; background-color: #f4f6f9; text-align: center; }
+        .rooms-section h1 { font-size: 2.5rem; color: #1a2a44; margin-bottom: 40px; position: relative; padding-bottom: 10px; }
+        .rooms-section h1::after { content: ''; width: 40px; height: 3px; background-color: #ffd700; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .room-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .room-box { background-color: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 350px; overflow: hidden; position: relative; }
+        .room-slider { width: 100%; height: 230px; display: flex; transition: transform 0.5s ease; }
+        .room-slide { min-width: 100%; height: 100%; }
+        .room-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .room-box h2 { font-size: 1.8rem; color: #1a2a44; margin: 15px 0; }
+        .room-box p { color: #333; padding: 0 15px; line-height: 1.6; }
+        .room-box .book-btn { display: inline-block; background-color: #ffd700; color: #1a2a44; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 600; margin: 15px; transition: background-color 0.3s ease; }
+        .room-box .book-btn:hover { background-color: #e6c200; }

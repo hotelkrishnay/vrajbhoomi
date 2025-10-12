@@ -1,0 +1,337 @@
+ 
+        /* Global Styles from index.html (Required) */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { overflow-x: hidden; background-color: #f4f6f9; padding-top: 130px; /* Space for sticky navbar and tabs */ }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navbar Styles from index.html (Required) */
+        .navbar { background-color: #aaacaf; color: #fff; padding: 15px 20px; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .navbar .logo img { height: 100px; width: auto; object-fit: contain; border-radius: 50px;}
+        .navbar .nav-links { display: flex; gap: 20px; }
+        .navbar .nav-links a { color: #ffffff; text-decoration: none; font-size: 1rem; transition: color 0.3s ease; }
+        .navbar .nav-links a:hover { color: #ffd700; }
+        .navbar .contact-btns { display: flex; gap: 10px; align-items: center; }
+        .navbar .contact-btns a { padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.9rem; transition: background-color 0.3s ease; }
+        .navbar .call-btn { background-color: #28a745; color: #fff; }
+        .navbar .whatsapp-btn { background-color: #25d366; color: #fff; }
+        .navbar .call-btn:hover, .navbar .whatsapp-btn:hover { opacity: 0.9; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; }
+
+        /* Floating Buttons (Required) */
+        .floating-buttons { 
+            display: none; 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 1000; 
+            flex-direction: column; 
+            gap: 10px; 
+        }
+        .floating-buttons a { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            text-decoration: none; 
+            color: #fff; 
+            font-size: 1.2rem; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+        .floating-buttons .call-btn { background-color: #28a745; }
+        .floating-buttons .whatsapp-btn { background-color: #25d366; }
+        .floating-buttons a:hover { transform: scale(1.1); opacity: 0.9; }
+
+        /* Footer with Three Parts */
+        .footer {
+            background-color:#1a2a44;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer .footer-part {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .footer .footer-part.logo-address img {
+            height: 50px;
+            margin-bottom: 10px;
+             
+        }
+        .footer .footer-part.logo-address p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        .footer .footer-part.contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .footer .footer-part.contact-info p {
+            margin: 5px 0;
+        }
+        .footer .footer-part.contact-info a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .footer .footer-part.contact-info a:hover {
+            color: #ffd700;
+        }
+        .footer .footer-part.map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+        .footer .footer-part.links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            display: inline-block;
+        }
+        .footer .footer-part.links a:hover {
+            color: #ffd700;
+        }
+
+        /* --- GALLERY-SPECIFIC CSS --- */
+        
+        /* Gallery Header */
+        .gallery-header {
+            text-align: center;
+            padding: 30px 0 10px 0;
+        }
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            color: #1a2a44;
+            margin-bottom: 5px;
+        }
+        .gallery-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Tab Navigation - Desktop Base */
+        .tab-nav {
+            position: sticky;
+            top: 130px; /* Below the fixed navbar */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 900;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        .tab-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 10px;
+            padding: 0;
+        }
+        .tab-nav li button {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .tab-nav li button:hover {
+            background-color: #f0f0f0;
+        }
+        .tab-nav li button.active {
+            background-color: #1a2a44;
+            color: #ffd700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Grid (Desktop/Tablet) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item-container {
+            display: none;
+        }
+        .gallery-item-container.active {
+            display: grid;
+        }
+
+        /* Lightbox - Base Styling (Ensures buttons are visible and large) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 100vh;
+            display: block;
+            border-radius: 10px;
+        }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4); /* Darker for better visibility */
+            border: none;
+            color: white;
+            padding: 20px; /* Larger hit area */
+            cursor: pointer;
+            font-size: 2rem; /* Larger icon */
+            border-radius: 50%;
+            transition: background 0.3s ease;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-btn:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        #prevBtn { left: 20px; }
+        #nextBtn { right: 20px; }
+        #closeBtn {
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.4);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        /* Mobile Adjustments (max-width: 768px) */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; } /* Adjusted padding for mobile navbar */
+            /* Navbar mobile styles (kept the same) */
+            .navbar .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1a2a44; padding: 20px; text-align: center; }
+            .navbar .nav-links.active { display: flex; }
+            .navbar .contact-btns { display: flex; flex-direction: row; gap: 10px; }
+            .navbar .contact-btns.active { position: static; padding: 10px 0; }
+            .menu-toggle { display: block; }
+            .floating-buttons { display: flex; }
+            .navbar .logo img { height: 50px; }
+
+
+            /* **FIX 1: Improved Mobile Tab Nav** */
+            .tab-nav {
+                top: 70px; /* Adjust sticky position below smaller mobile navbar */
+            }
+            .tab-nav ul {
+                justify-content: flex-start; /* Align tabs to the left */
+                overflow-x: scroll; /* Scroll horizontally */
+                -webkit-overflow-scrolling: touch;
+                padding: 0 10px 10px 10px; /* Padding for scroll visibility */
+                gap: 5px; /* Tighter gap for more buttons */
+            }
+            .tab-nav li button {
+                padding: 8px 12px; /* Smaller padding */
+                font-size: 0.85rem; /* Smaller font size */
+                border-radius: 20px; /* Pill shape */
+            }
+            
+            /* Mobile Grid */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small mobile */
+                gap: 10px;
+                padding: 10px;
+            }
+            .gallery-item img { height: 150px; }
+
+
+            /* **FIX 2: Improved Mobile Lightbox Buttons** */
+            .lightbox-btn { 
+                padding: 10px; 
+                font-size: 1.5rem; 
+                opacity: 0.8; 
+            }
+            #prevBtn { left: 5px; } 
+            #nextBtn { right: 5px; }
+            #closeBtn { 
+                top: 10px; 
+                right: 10px; 
+                font-size: 1.2rem; 
+                width: 35px; 
+                height: 35px; 
+                line-height: 35px; 
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        /* Tablet Adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+            }
+        }
+        /* Desktop Adjustments (Kept the same) */
+        @media (min-width: 1025px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+            }
+        }
+    
